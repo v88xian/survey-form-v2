@@ -15,6 +15,8 @@ RUN mkdir -p /var/www/app/src
 
 WORKDIR /var/www/app/src
 
+ONBUILD RUN /var/www/app/node_modules/.bin/mocha /var/www/app/src/test/*.test.js
+
 COPY src .
 
 EXPOSE 3000
